@@ -32,6 +32,9 @@ namespace Blog
 
             services.AddControllers();
             services.AddDbContext<DevBlogDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("Conn")));
+            services.AddCors(options => options.AddPolicy("default", policy => {
+                policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+               }));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Blog", Version = "v1" });
@@ -51,7 +54,7 @@ namespace Blog
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors("defulat");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
