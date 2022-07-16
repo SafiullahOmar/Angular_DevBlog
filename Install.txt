@@ -1,0 +1,22 @@
+
+Looking up for the keyword > Global Library Installation on https://github.com/angular/angular-cli helps you find the answer.
+
+As per their document, you can take the following steps to add the Bootstrap library.
+
+First, install Bootstrap from npm:
+
+npm install bootstrap
+Then add the needed script file to apps[0].scripts in the angular.json file:
+
+ "scripts": [
+    "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ],
+The above step is important for certain functionality to work such as the displaying of the dropdown menu.
+
+Finally add the Bootstrap CSS file to the apps[0].styles array in the angular.json file:
+
+"styles": [
+    "styles.css",
+    "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    ],
+    

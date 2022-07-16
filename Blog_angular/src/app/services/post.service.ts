@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Post } from '../models/post.model';
+import { updatePostRequest } from '../models/update-post.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,13 @@ export class PostService {
   constructor(private http:HttpClient) { }
 
   getAllPosts():Observable<Post[]> {
-   return this.http.get<Post[]>(this.api+'posts')
+   return this.http.get<Post[]>(this.api+'posts');
   }
+  getPostById(id:string):Observable<Post>{
+    return this.http.get<Post>(this.api+'posts/'+id);
+   }
+
+   updatePost(id:string|undefined,updatePost:updatePostRequest):Observable<Post>{
+    return this.http.put<Post>(this.api+'posts/'+id,updatePost);
+   }
 }

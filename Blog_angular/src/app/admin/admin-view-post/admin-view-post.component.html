@@ -1,0 +1,50 @@
+<div class="container" *ngIf="post">
+    <h1>View Blog</h1>
+    <form #form="ngForm">
+        <div class="mb-3">
+            <label class="form-label">Id</label>
+            <input type="text" class="form-control" name="id" [(ngModel)]="post.Id" readonly>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Title</label>
+            <input type="text" class="form-control" name="Title" [(ngModel)]="post.Title">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Content</label>
+            <textarea class="form-control" name="Content" [(ngModel)]="post.Content"></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Summary</label>
+            <input type="text" class="form-control" name="Summary" [(ngModel)]="post.Summary">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Feautered Image Url</label>
+            <input type="text" class="form-control" name="FeautredImageURL" [(ngModel)]="post.FeautredImageURL">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Author</label>
+            <input type="text" class="form-control" name="Author" [(ngModel)]="post.Author">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Url Handle</label>
+            <input type="text" class="form-control" name="URLHandle" [(ngModel)]="post.URLHandle">
+        </div>
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" name="Visible" [(ngModel)]="post.Visible">
+            <label class="form-check-label" >
+                Visiable
+            </label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">publish Date</label>
+            <input type="text" class="form-control" name="PublishDate" [(ngModel)]="post.PublishDate">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">UpdateDate</label>
+            <input type="text" class="form-control" name="UpdateDate" [(ngModel)]="post.UpdateDate">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>
